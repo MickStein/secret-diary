@@ -1,4 +1,5 @@
 class Diary
+
   def lock
     true
   end
@@ -8,6 +9,10 @@ class Diary
   end
 
   def add_entry(diary_entry)
-    diary_entry
+    @diary_entry = diary_entry
+  end
+
+  def get_entry
+    @diary_entry
   end
 end
