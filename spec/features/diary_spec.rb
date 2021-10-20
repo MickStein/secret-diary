@@ -1,6 +1,12 @@
 require 'diary'
 
 describe Diary do
+  it "diary starts locked" do
+    diary = Diary.new
+
+    expect(diary.is_locked).to eq true
+  end
+
   it "locks the diary so users cannot add or get entries" do
     diary = Diary.new
 

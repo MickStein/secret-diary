@@ -1,4 +1,9 @@
 class Diary
+  attr_reader :is_locked
+
+  def initialize
+    @is_locked = true
+  end
 
   def lock
     true
