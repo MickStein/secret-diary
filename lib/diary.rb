@@ -10,14 +10,16 @@ class Diary
   end
 
   def unlock
-    true
+    @is_locked = false
   end
 
   def add_entry(diary_entry)
+    fail "This notebook is locked, unable to add entry. Please unlock" if self.is_locked == true
     @diary_entry = diary_entry
   end
 
   def get_entry
+    fail "This notebook is locked, unable to add entry. Please unlock" if self.is_locked == true
     @diary_entry
   end
 end
