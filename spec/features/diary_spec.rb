@@ -24,7 +24,7 @@ describe Diary do
     diary = Diary.new
     diary.unlock
 
-    expect(diary.add_entry("Dear diary, today I ate bread")).to eq "Dear diary, today I ate bread"
+    expect(diary.add_entry("Dear diary, today I ate bread")).to eq ["Dear diary, today I ate bread"]
   end
 
   it "retrieves an entry for the user to read" do
