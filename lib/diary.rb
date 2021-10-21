@@ -1,3 +1,5 @@
+# A diary class that can be locked and unlocked. When unlocked it allows the user to add a new entry (created by entry class) and retrieve created entries
+
 class Diary
   attr_reader :is_locked, :diary_entry, :diary_entries
 
@@ -8,7 +10,7 @@ class Diary
   end
 
   def lock
-    true
+    @is_locked = true
   end
 
   def unlock
