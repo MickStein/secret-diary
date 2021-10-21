@@ -1,8 +1,9 @@
 class Diary
-  attr_reader :is_locked
+  attr_reader :is_locked, :diary_entry
 
-  def initialize
+  def initialize(entry = "")
     @is_locked = true
+    @diary_entry = entry
   end
 
   def lock
@@ -18,7 +19,7 @@ class Diary
     @diary_entry = diary_entry
   end
 
-  def get_entry
+  def get_entry(diary_entry)
     fail "This notebook is locked, unable to add entry. Please unlock" if self.is_locked == true
     @diary_entry
   end

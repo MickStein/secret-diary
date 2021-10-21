@@ -32,7 +32,7 @@ describe Diary do
     diary.unlock
     diary.add_entry("I do not feel great today :(")
 
-    expect(diary.get_entry).to eq "I do not feel great today :("
+    expect(diary.get_entry("I do not feel great today :(")).to eq "I do not feel great today :("
   end
 
   it "raises an error when user tries to add_entry while locked" do
@@ -44,6 +44,6 @@ describe Diary do
   it "raises an error when user tries to get_entry while locked" do
     diary = Diary.new
 
-    expect{diary.get_entry("I do not feel great today :(")}.to raise_error "This notebook is locked, unable to get entry. Please unlock"
+    expect{diary.get_entry("I do not feel great today :(")}.to raise_error "This notebook is locked, unable to add entry. Please unlock"
   end
 end
