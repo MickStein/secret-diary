@@ -9,12 +9,12 @@ class Diary
     @diary_entries = diary_entries
   end
 
-  def lock
-    @is_locked = true
-  end
-
-  def unlock
-    @is_locked = false
+  def lock_unlock
+    if self.is_locked == true
+      @is_locked = false
+    elsif self.is_locked == false
+      @is_locked = true
+    end
   end
 
   def add_entry(an_entry)

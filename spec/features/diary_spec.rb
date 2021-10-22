@@ -9,27 +9,27 @@ describe Diary do
 
   it "locks the diary so users cannot add or get entries" do
     diary = Diary.new
+    diary.lock_unlock
 
-    expect(diary.lock).to eq true
+    expect(diary.lock_unlock).to eq true
   end
 
   it "unlocks the diary so users can add or get entries" do
     diary = Diary.new
-    diary.unlock
 
-    expect(diary.is_locked).to eq false
+    expect(diary.lock_unlock).to eq false
   end
 
   it "adds an entry to the diary that is a string saying 'Dear diary, today I ate bread'" do
     diary = Diary.new
-    diary.unlock
+    diary.lock_unlock
 
     expect(diary.add_entry("Dear diary, today I ate bread")).to eq ["Dear diary, today I ate bread"]
   end
 
   it "retrieves an entry for the user to read" do
     diary = Diary.new
-    diary.unlock
+    diary.lock_unlock
     diary.add_entry("I do not feel great today :(")
 
     expect(diary.get_entry("I do not feel great today :(")).to eq "I do not feel great today :("
